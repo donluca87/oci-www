@@ -8,7 +8,7 @@ EXPOSE 3000
 FROM base as production
 ENV NODE_ENV=production
 #RUN npm ci
-RUN npm install
+RUN npm install --quiet
 COPY . ./
 CMD ["node", "server.js"]
 
