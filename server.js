@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const path = require('path');
 
 app.use((req, res, next) => {
   console.log('Time: ', Date.now());
@@ -13,7 +14,8 @@ app.use('/request-type', (req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Successful response.');
+  //res.send('Successful response.');
+  res.sendFile(path.join(__dirname, 'index.html'))
 });
 
-app.listen(3000, "0.0.0.0", () => console.log('Example app is listening on port 3000.'));
+app.listen(3000, () => console.log('Example app is listening on port 3000.'));
