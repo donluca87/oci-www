@@ -1,0 +1,23 @@
+{
+  "name": "oci-www",
+  "version": "1.0.0",
+  "description": "oracle cloud cicd web app -> auto deploy on VPS www/foldername with github actions on PUSH",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucad987/oci-www.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucad987/oci-www/issues"
+  },
+  "homepage": "https://github.com/lucad987/oci-www#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
