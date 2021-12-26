@@ -1,4 +1,9 @@
 version: '3.7'
+
+networks:
+    web: 
+        external: true
+
 services:
     # Run the node application
     node-app:
@@ -18,10 +23,12 @@ services:
             - "80:80"
             - "443:443"
         volumes:            
-        - $PWD/Caddyfile:/etc/caddy/Caddyfile
-        - $PWD/site:/srv
-        - caddy_data:/data
-        - caddy_config:/config
+            - $PWD/Caddyfile:/etc/caddy/Caddyfile
+            - $PWD/site:/srv
+            - caddy_data:/data
+            - caddy_config:/config
+        networks:
+            - web
 
 volumes:
   caddy_data:
