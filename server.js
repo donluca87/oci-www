@@ -16,4 +16,4 @@ app.get('/', (req, res) => {
   res.send('Successful response.');
 });
 
-app.listen(4000, "0.0.0.0", () => console.log('Example app is listening on port 4000.'));
+app.listen(3000, "0.0.0.0", () => console.log('Example app is listening on port 3000.'));

@@ -1,35 +1,13 @@
-version: '3.7'
-
-networks:
-    web: 
-        external: true
-
+version: '3.8'
 services:
-    # Run the node application
-    node-app:
-        container_name: node-app
-        restart: unless-stopped
-        environment: 
-            - NODE_ENV=production
-        build:
-            context: ./
-
-    # Run the caddy server        
-    caddy:
-        image: caddy/caddy:2.2.1-alpine
-        container_name: caddy-service
-        restart: unless-stopped
-        ports:
-            - "80:80"
-            - "443:443"
-        volumes:            
-            - $PWD/Caddyfile:/etc/caddy/Caddyfile
-            - $PWD/site:/srv
-            - caddy_data:/data
-            - caddy_config:/config
-        networks:
-            - web
-
-volumes:
-  caddy_data:
-  caddy_config: 
+  web:
+    build:
+      context: ./
+      target: production
+    volumes:
+      - .:/src
+    command: npm run start
+    ports:
+      - "80:3000"
+    environment:
+      NODE_ENV: production

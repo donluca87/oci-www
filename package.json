@@ -2,7 +2,7 @@
   "name": "oci-www",
   "version": "1.0.0",
   "description": "oracle cloud cicd web app -> auto deploy on VPS www/foldername with github actions on PUSH",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/lucad987/oci-www#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
   }
 }
