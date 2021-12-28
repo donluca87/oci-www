@@ -9,6 +9,7 @@ services:
     volumes:
       - .:/src
       - /src/node_modules
+      - /src/images
     command: npm run start
     restart: unless-stopped
     environment:
