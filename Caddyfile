@@ -7,9 +7,9 @@ lucad.ml {
 }
 
 www.lucad.ml {
-	reverse_proxy node-app:3000
+	redir lucad.ml
 }
 
 api.lucad.ml {
-    reverse_proxy node-app:4000
+    redir lucad.ml/api
 }
