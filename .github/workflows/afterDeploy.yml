@@ -20,4 +20,4 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: chown ubuntu /var/www/lucad.ml/* && cd /var/www/lucad.ml && docker-compose up -d --build
+        script: cd /var/www/lucad.ml && docker-compose up -d --build
