@@ -1,0 +1,11 @@
+localhost {
+    reverse_proxy node-app:3000
+}
+
+lucad.ml {
+	reverse_proxy node-app:3000
+}
+
+www.lucad.ml {
+	redir lucad.ml
+}

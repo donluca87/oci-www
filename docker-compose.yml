@@ -1,6 +1,8 @@
-version: '3.8'
+version: '3.7'
+
 services:
-  web:
+  node-app:
+    container_name: node-app-service
     build:
       context: ./
       target: production
@@ -8,7 +10,20 @@ services:
       - .:/src
       - /src/node_modules
     command: npm run start
-    ports:
-      - "80:3000"
+    restart: unless-stopped
     environment:
       NODE_ENV: production
+    depends_on:
+      - caddy
+       
+  caddy:
+      image: caddy:alpine
+      container_name: caddy-service
+      restart: unless-stopped
+      ports:
+          - 80:80
+          - 443:443
+      volumes:            
+          - ./caddy_data:/data
+          - ./caddy_config:/config
+          - ./Caddyfile:/etc/caddy/Caddyfile
