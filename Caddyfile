@@ -2,10 +2,10 @@ localhost {
     reverse_proxy node-app:3000
 }
 
-lucad987.ml {
+www.lucad.ml {
 	reverse_proxy node-app:3000
 }
 
-www.lucad987.ml {
-  redir https://lucad.ml{uri}
+lucad.ml {
+  redir https://www.lucad.ml{uri}
 }
