@@ -6,10 +6,14 @@ lucad.ml {
 	reverse_proxy node-app:3000
 }
 
-www.lucad.ml {
-	redir lucad.ml
+lucad987.ml {
+    reverse_proxy node-app:3000
 }
 
-api.lucad.ml {
-    redir lucad.ml/api
+www.lucad987.ml {
+    reverse_proxy node-app:3000
+}
+
+api.lucad987.ml {
+    respond "api works"
 }
