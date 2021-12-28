@@ -16,8 +16,8 @@ jobs:
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
+        HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: cd /var/www/lucad.ml && docker-compose up -d --build
+        script: cd /var/www/lucad.ml && docker-compose up -d --build -u 1001:1001
