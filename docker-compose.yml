@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   node-app:
-    container_name: node-app-service
+    container_name: node-app
     build:
       context: ./
       target: production
@@ -15,4 +15,4 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 8888:3000
+      - 7890:8080
