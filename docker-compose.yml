@@ -14,17 +14,5 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-    depends_on:
-      - caddy
-       
-  caddy:
-      image: caddy:alpine
-      container_name: caddy-service
-      restart: unless-stopped
-      ports:
-          - 8888:80
-          - 4343:443
-      volumes:            
-          - ./caddy_data:/data
-          - ./caddy_config:/config
-          - ./Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - 8888:3000

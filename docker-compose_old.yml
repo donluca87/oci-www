@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  node-app:
+    container_name: node-app-service
+    build:
+      context: ./
+      target: production
+    volumes:
+      - .:/src
+      - /src/node_modules
+      - /src/images
+    command: npm run start
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    depends_on:
+      - caddy
+       
+  caddy:
+      image: caddy:alpine
+      container_name: caddy-service
+      restart: unless-stopped
+      ports:
+          - 8888:80
+          - 4343:443
+      volumes:            
+          - ./caddy_data:/data
+          - ./caddy_config:/config
+          - ./Caddyfile:/etc/caddy/Caddyfile
