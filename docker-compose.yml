@@ -22,7 +22,7 @@ services:
       container_name: caddy-service
       restart: unless-stopped
       ports:
-          - 5656:8888
+          - 3000:80
       volumes:            
           - ./caddy_data:/data
           - ./caddy_config:/config
