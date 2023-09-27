@@ -3,6 +3,7 @@ version: '3.7'
 services:
   node-app:
     container_name: node-app
+    image: lucad.ml-node-app:latest
     build:
       context: ./
       target: production
