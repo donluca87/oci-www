@@ -1,3 +1,6 @@
-:3000 {
-    reverse_proxy localhost:3000
+vps-test.lucad.cloud {
+  # node-app:3000 is the docker container running the Node.js application
+  reverse_proxy node-app:3000  {
+    header_down Strict-Transport-Security max-age=31536000;
+   }
 }
