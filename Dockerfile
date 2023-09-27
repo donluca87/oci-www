@@ -1,5 +1,5 @@
 # Use Node.js 14 Alpine
-FROM node:14-alpine as base
+FROM node:current-alpine as base
 
 WORKDIR /src
 COPY package*.json ./
